@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg523bi236nov"]
+
+[ext_resource type="Script" uid="uid://cdlgk0ihgg5rf" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="PackedScene" uid="uid://djhklwif3pymu" path="res://paralax_bg.tscn" id="2_ouk20"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_lti8b")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="Exite" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 344.0
+offset_right = 768.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 40
+text = "Exite"
+
+[node name="ParalaxBG" parent="." instance=ExtResource("2_ouk20")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Exite" to="." method="_on_exite_pressed"]
